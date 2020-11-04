@@ -1,0 +1,13 @@
+.form-container{
+
+    margin-top: 70px;
+    margin-left:320px;
+    border:1px solid grey;
+    border-radius:8px;
+    width:500px;
+    padding-left:40px;
+    
+}
+.form-container h1{
+    margin-left:100px;
+}

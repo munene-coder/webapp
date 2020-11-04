@@ -1,2 +1,2 @@
 # IAP
-Internet App project
+Internet App Programming Project
