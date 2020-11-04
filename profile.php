@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'dbconnect.php';
 ?>
 <head>
 	        <!--Bootstrap css-->
@@ -51,12 +52,44 @@ session_start();
                <?php
              }
             ?>
+      <div class="container">
+      <?php
 
+      $connection=new DBConnector();
+      $pdo=$connection->connectToDB();
+
+        if(isset($_SESSION['user'])){
+          $stmt=$pdo->prepare("SELECT fullname,address_city,email,profile_photo FROM usertbl WHERE fullname=?");
+          $stmt->execute([$_SESSION['user']]);
+
+          $row=$stmt->fetch($pdo::FETCH_ASSOC);
+?>
+     <form class="form-container" action="processupdate" method="post">
+     <h1 id="registerheader">My Profile</h1>
+     <div class="form-group col-sm-7">
+     <label for="fullname">Name</label>
+     <input  type="text" class="form-control" value=<?php echo $row['fullname'];?>>
+     </div>
+     <div class="form-group col-sm-7">
+     <label for="email">Email</label>
+     <input  type="email" class="form-control" value=<?php echo $row['email'];?>>
+     </div>
+     <div class="form-group col-sm-7">
+     <label for="address">Address</label>
+     <input  type="text" class="form-control" value=<?php echo $row['address_city'];?>>
+     </div>
+     <div class="form-group col-sm-7">
+           <button type="submit" class="btn btn-outline-primary">Update Profile</button>
+           </div>
+     </form>
+<?php
+        }
+    
+      
+      ?>
+      </div>
       
     
   
 </body>
-
-
-
 

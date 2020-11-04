@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+
 //implement the user interface
 
 include "Interface.php";
@@ -140,7 +140,8 @@ class User implements UserInterface{
         session_destroy();
         header("location:login.php");
     }
-
+  
+ 
 
 }
 
