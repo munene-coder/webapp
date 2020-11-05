@@ -31,6 +31,9 @@ include 'dbconnect.php';
               <?php echo "Welcome, ".  $_SESSION['user'];?>
               </a>
               </li>
+              <li class="nav-tem">
+              <a href="Viewfoods.php" class="nav-link">Order an Item</a>
+              </li>
                </ul>
                </div>
                <form action="logout.php" method="post">
