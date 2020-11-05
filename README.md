@@ -25,6 +25,8 @@ This application has 1.User Registration Module
 
 #To To make an order login first and on the navigation bar click the make order link.
 
+#The projects files contain the implemented code.
+
 
 
 
