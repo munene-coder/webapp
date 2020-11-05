@@ -19,11 +19,13 @@ This application has 1.User Registration Module
 
 #On the browser type Provide the following URL to register. (localhost/*name of Folder you cloned the application */register.php).
 
-#To login use login.php
+#To login use localhost/*name of folder you cloned the app*/login.php
 
-#To change password use changepassword.php
+#To change password use localhost/*name of folder you cloned the app*/changepassword.php
 
-#To To make an order login first and on the navigation bar click the make order link.
+
+#To To make an order login first and on the navigation bar click the make order link.From this interface you can see the available foods.To add a new food use 
+localhost/*name of folder you cloned the application into*/addfood.php
 
 #The projects files contain the implemented code.
 
