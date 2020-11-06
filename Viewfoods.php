@@ -33,6 +33,9 @@ session_start();
               <li class="nav-tem">
               <a href="profile.php" class="nav-link">My Profile</a>
               </li>
+              <li class="nav-tem">
+              <a class="nav-link" href="vieworders.php">View Orders</a>
+              </li>
                </ul>
                </div>
                <form action="logout.php" method="post">

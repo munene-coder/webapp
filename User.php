@@ -73,7 +73,7 @@ class User implements UserInterface{
     
     public function register($pdo){
 
-        $filepath="Assets/Userprofiles";
+        $filepath="Assets/";
        $profileoriginalname=$this->getprofilePhoto()['name'];
 
         $prflfiletyp=substr($profileoriginalname,strpos($profileoriginalname,'.'),strlen($profileoriginalname));

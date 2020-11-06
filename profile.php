@@ -32,7 +32,10 @@ include 'dbconnect.php';
               </a>
               </li>
               <li class="nav-tem">
-              <a href="Viewfoods.php" class="nav-link">Order an Item</a>
+              <a href="Viewfoods.php" class="nav-link active">Order an Item</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="vieworders.php">View Orders </a>
               </li>
                </ul>
                </div>
@@ -69,6 +72,9 @@ include 'dbconnect.php';
 ?>
      <form class="form-container" action="processupdate" method="post">
      <h1 id="registerheader">My Profile</h1>
+     <div class="form-group" style="padding-left:150px">
+     <img src="Assets/<?php echo $row['profile_photo'];?>" alt="profilepicture" style="width:80px;height:80px;border-radius:100%"/>
+      </div>
      <div class="form-group col-sm-7">
      <label for="fullname">Name</label>
      <input  type="text" class="form-control" value=<?php echo $row['fullname'];?>>
