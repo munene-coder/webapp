@@ -104,7 +104,7 @@ session_start();
               <p><?php echo "Kshs ". $row['price'];?></p>
               <input type="text" class="form-control col-sm-4" name="quantity" placeholder="Enter quantity" required>
               <br>
-              <button type="submit" class="btn btn-success">Place Order</button>
+              <button type="submit" class="btn btn-outline-success">Place Order</button>
               </form>
               </div>
               <br>

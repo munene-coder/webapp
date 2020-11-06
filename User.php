@@ -99,7 +99,7 @@ class User implements UserInterface{
         $stmt->execute([$this->getEmail()]);
 
         $row= $stmt->fetch($pdo::FETCH_ASSOC);
-        $stmt=null;
+        $stmt=NULL;
 
         if($this->password==$row['password']){
             $_SESSION['profile']=$row['profile_photo'];
