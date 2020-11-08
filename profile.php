@@ -47,7 +47,7 @@ include 'dbconnect.php';
              }
              else{
                ?>
-              <div class="navbar navbar-dark bg-dark" style="color:white">
+              <div class="navbar navbar-light bg-light" style="color:white">
               <?php
                echo "You are not logged in";
                ?>
@@ -87,6 +87,10 @@ include 'dbconnect.php';
      <div class="form-group col-sm-7">
      <label for="address">Address</label>
      <input  type="text" class="form-control" value=<?php echo $row['address_city'];?>>
+     </div>
+     <div class="form-group col-sm-7">
+     <label for="profilephoto">Profile Photo</label>
+     <input type="file" class="form-control" name="profilephoto">
      </div>
      <div class="form-group col-sm-7">
            <button type="submit" class="btn btn-outline-primary">Update Profile</button>

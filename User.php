@@ -72,7 +72,7 @@ class User implements UserInterface{
 
     
     public function register($pdo){
-
+        $hashedpassword=password_hash($this->getPassword(),PASSWORD_DEFAULT);
         $filepath="Assets/";
        $profileoriginalname=$this->getprofilePhoto()['name'];
 
@@ -84,7 +84,7 @@ class User implements UserInterface{
         if(move_uploaded_file($phototmplctn,$filepath.$newprofilephoto)){
 
         $query=$pdo->prepare("INSERT INTO usertbl(fullname,email,address_city,profile_photo,password)VALUES(?,?,?,?,?)");
-        $query->execute([$this->getFullName(),$this->getEmail(),$this->getAddress(),$newprofilephoto,$this->getPassword()]);
+        $query->execute([$this->getFullName(),$this->getEmail(),$this->getAddress(),$newprofilephoto,$hashedpassword]);
         $query=null;
 
         $_SESSION['rgstrsuccess']="Registered successfully!";
@@ -95,13 +95,14 @@ class User implements UserInterface{
 
     public function login($pdo){
 
+         
         $stmt=$pdo->prepare("SELECT  fullname, profile_photo, password FROM usertbl WHERE email=? ");
         $stmt->execute([$this->getEmail()]);
 
-        $row= $stmt->fetch($pdo::FETCH_ASSOC);
+        $row= $stmt->fetch();
         $stmt=NULL;
 
-        if($this->password==$row['password']){
+        if(password_verify($this->getPassword(),$row['password'])){
             $_SESSION['profile']=$row['profile_photo'];
             $_SESSION['user']=$row['fullname'];  
             header("location:profile.php");
