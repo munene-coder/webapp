@@ -67,7 +67,7 @@ $pdo=$connection->connectToDB();
                                <h1>Check  status</h1>
                                <div class="form-group col-sm-7">
                                           <label for="order_id">Order Id</label>
-                                               <input  type="text" class="form-control" name="order_status" id="order_status">
+                                               <input  type="text" class="form-control" name="order_status" id="order_status" required>
                                    </div>
                                    <div class="form-group col-sm-7">
                                             <button type="submit" class="btn btn-outline-primary" id="checkorderbtn">Check Order</button>
