@@ -1,12 +1,12 @@
 $(document).ready(function(){
-
-    $('#orderbtn').click(function(event){
+ $('#orderbtn').click(function(event){
         event.preventDefault();
 
         //receive variables
         let food_name=$('#food_name').val();
         let food_quantity=$('#food_quantity').val();
         
+    
 
 
 //build post request using ajax
@@ -31,36 +31,6 @@ $(document).ready(function(){
                 alert("An error occured.Feature not available");
             }
         });
-
-        
-    })
-
-,
-$('#checkorderbtn').click(function(event){
-    event.preventDefault();
-
-    let order_status=$('#order_status').val();
-  
-    $.ajax({
-
-        url:"http://localhost/FoodApp/order.php",//url to the resource
-        type:"post",
-        data:{ 
-               order_status:order_status
-
-        },
-        //pass API  as authentication in headers
-        headers:{
-         
-            'Authorization':'Basic NJHBMBVXDCN56uvhHVF6'
-        },
-        success:function(data){
-            alert(data["Order status"]);
-        },
-        error:function(){
-            alert("This Fetaure is coming soon");
-        }
-    });
     
-});
-})
+    })
+    })
